@@ -1,0 +1,190 @@
+event_id,customer_id,event_type,event_date,location,severity,event_status
+E000001,C0001,Data Session Failure,2026-10-08 08:00:00,Cell-DL-008,Medium,Open
+E000002,C0001,Call Drop,2026-09-10 10:38:00,Cell-WB-011,Medium,Closed
+E000003,C0003,Coverage Degradation,2026-10-21 22:20:00,Cell-KA-014,High,Closed
+E000004,C0005,Network Congestion,2026-09-06 11:14:00,Cell-MH-022,Low,Closed
+E000005,C0005,SIM Registration Failure,2026-10-31 19:33:00,Cell-WB-011,Medium,Closed
+E000006,C0005,Data Session Failure,2026-09-01 03:42:00,Cell-DL-008,Low,Closed
+E000007,C0005,Call Drop,2026-10-29 19:15:00,Cell-MH-022,Low,Closed
+E000008,C0006,Call Drop,2026-10-05 23:18:00,Cell-WB-011,Medium,Closed
+E000009,C0006,SIM Registration Failure,2026-10-22 16:28:00,Cell-TN-001,Low,Closed
+E000010,C0006,Call Drop,2026-09-21 16:05:00,Cell-KA-014,High,Closed
+E000011,C0007,Network Congestion,2026-09-14 21:40:00,Cell-DL-008,Medium,Closed
+E000012,C0010,Network Congestion,2026-10-12 02:47:00,Cell-TN-001,Low,Closed
+E000013,C0010,Network Congestion,2026-09-06 02:03:00,Cell-MH-022,Medium,Closed
+E000014,C0010,SIM Registration Failure,2026-09-15 08:26:00,Cell-DL-008,Medium,Closed
+E000015,C0010,Call Drop,2026-09-02 12:43:00,Cell-WB-011,Low,Closed
+E000016,C0011,Coverage Degradation,2026-10-15 02:22:00,Cell-TN-001,Low,Closed
+E000017,C0012,SIM Registration Failure,2026-10-19 14:24:00,Cell-TN-001,Low,Closed
+E000018,C0012,Coverage Degradation,2026-09-09 23:25:00,Cell-MH-022,High,Open
+E000019,C0012,Data Session Failure,2026-10-14 23:41:00,Cell-TN-001,Medium,Closed
+E000020,C0013,Coverage Degradation,2026-10-07 19:25:00,Cell-WB-011,High,Closed
+E000021,C0014,Coverage Degradation,2026-09-14 13:57:00,Cell-KA-014,Low,Closed
+E000022,C0014,Call Drop,2026-10-24 08:12:00,Cell-KA-014,Medium,Closed
+E000023,C0014,Coverage Degradation,2026-09-04 17:29:00,Cell-TN-001,Low,Open
+E000024,C0015,Network Congestion,2026-10-31 10:22:00,Cell-KA-014,Low,Closed
+E000025,C0015,SIM Registration Failure,2026-10-28 06:20:00,Cell-DL-008,Low,Closed
+E000026,C0015,Coverage Degradation,2026-10-15 18:09:00,Cell-WB-011,Low,Closed
+E000027,C0015,Data Session Failure,2026-09-28 05:00:00,Cell-KA-014,Medium,Closed
+E000028,C0016,Data Session Failure,2026-10-24 11:08:00,Cell-DL-008,Low,Closed
+E000029,C0016,Call Drop,2026-09-20 15:35:00,Cell-KA-014,Medium,Open
+E000030,C0016,Coverage Degradation,2026-09-18 04:57:00,Cell-KA-014,Low,Closed
+E000031,C0017,Coverage Degradation,2026-10-28 00:54:00,Cell-TN-001,Medium,Closed
+E000032,C0018,Data Session Failure,2026-10-29 01:35:00,Cell-WB-011,High,Closed
+E000033,C0018,SIM Registration Failure,2026-10-12 04:23:00,Cell-KA-014,High,Closed
+E000034,C0020,Call Drop,2026-09-26 11:32:00,Cell-KA-014,Medium,Closed
+E000035,C0021,SIM Registration Failure,2026-10-19 16:08:00,Cell-KA-014,Low,Closed
+E000036,C0021,SIM Registration Failure,2026-10-13 04:47:00,Cell-MH-022,Low,Closed
+E000037,C0022,Network Congestion,2026-09-24 07:02:00,Cell-WB-011,High,Closed
+E000038,C0022,Call Drop,2026-10-01 14:56:00,Cell-TN-001,High,Closed
+E000039,C0022,Data Session Failure,2026-10-16 16:40:00,Cell-MH-022,Medium,Closed
+E000040,C0023,Call Drop,2026-09-24 18:41:00,Cell-WB-011,Low,Closed
+E000041,C0023,Data Session Failure,2026-09-15 16:25:00,Cell-MH-022,Low,Closed
+E000042,C0023,Network Congestion,2026-10-09 00:32:00,Cell-DL-008,Low,Open
+E000043,C0023,Network Congestion,2026-10-12 08:13:00,Cell-KA-014,Low,Closed
+E000044,C0025,Call Drop,2026-10-22 10:46:00,Cell-DL-008,Medium,Closed
+E000045,C0025,SIM Registration Failure,2026-10-08 05:41:00,Cell-TN-001,Low,Open
+E000046,C0025,Coverage Degradation,2026-10-08 05:08:00,Cell-TN-001,High,Open
+E000047,C0025,Network Congestion,2026-09-11 08:59:00,Cell-WB-011,High,Closed
+E000048,C0026,Data Session Failure,2026-10-27 23:46:00,Cell-TN-001,Low,Closed
+E000049,C0027,SIM Registration Failure,2026-09-11 07:53:00,Cell-WB-011,Low,Closed
+E000050,C0027,Coverage Degradation,2026-10-20 05:39:00,Cell-MH-022,Low,Closed
+E000051,C0027,Coverage Degradation,2026-10-30 14:38:00,Cell-TN-001,Low,Closed
+E000052,C0027,Coverage Degradation,2026-09-07 00:12:00,Cell-WB-011,Medium,Closed
+E000053,C0028,Call Drop,2026-10-01 19:38:00,Cell-WB-011,Medium,Open
+E000054,C0028,Coverage Degradation,2026-10-01 21:08:00,Cell-WB-011,Medium,Closed
+E000055,C0029,Call Drop,2026-10-04 13:23:00,Cell-WB-011,Low,Closed
+E000056,C0029,Coverage Degradation,2026-10-01 12:22:00,Cell-WB-011,Low,Open
+E000057,C0029,Call Drop,2026-10-01 07:58:00,Cell-MH-022,Medium,Closed
+E000058,C0029,Call Drop,2026-09-17 06:00:00,Cell-WB-011,Medium,Closed
+E000059,C0030,Data Session Failure,2026-10-15 10:26:00,Cell-TN-001,Low,Closed
+E000060,C0030,Coverage Degradation,2026-09-17 08:54:00,Cell-DL-008,Medium,Closed
+E000061,C0032,Coverage Degradation,2026-09-27 17:50:00,Cell-DL-008,Low,Closed
+E000062,C0032,Coverage Degradation,2026-10-01 08:19:00,Cell-MH-022,Medium,Closed
+E000063,C0033,Network Congestion,2026-10-18 07:28:00,Cell-TN-001,Low,Closed
+E000064,C0034,Call Drop,2026-09-11 12:40:00,Cell-TN-001,Medium,Closed
+E000065,C0035,Data Session Failure,2026-09-05 08:14:00,Cell-TN-001,Medium,Closed
+E000066,C0037,Network Congestion,2026-10-16 19:03:00,Cell-DL-008,Low,Closed
+E000067,C0037,Network Congestion,2026-10-13 16:18:00,Cell-TN-001,Medium,Closed
+E000068,C0037,Network Congestion,2026-10-15 07:39:00,Cell-TN-001,Low,Closed
+E000069,C0039,SIM Registration Failure,2026-10-20 12:22:00,Cell-DL-008,Medium,Closed
+E000070,C0039,Call Drop,2026-10-18 22:04:00,Cell-WB-011,Low,Closed
+E000071,C0039,Data Session Failure,2026-10-29 18:22:00,Cell-MH-022,Low,Closed
+E000072,C0040,Network Congestion,2026-10-07 00:16:00,Cell-DL-008,Medium,Closed
+E000073,C0040,Call Drop,2026-10-03 09:21:00,Cell-WB-011,High,Closed
+E000074,C0040,SIM Registration Failure,2026-10-23 18:16:00,Cell-DL-008,Medium,Closed
+E000075,C0040,SIM Registration Failure,2026-10-19 10:49:00,Cell-DL-008,High,Closed
+E000076,C0041,Network Congestion,2026-09-05 12:40:00,Cell-KA-014,Medium,Closed
+E000077,C0041,Call Drop,2026-09-23 16:34:00,Cell-MH-022,Low,Open
+E000078,C0041,Data Session Failure,2026-10-14 23:52:00,Cell-TN-001,Medium,Open
+E000079,C0042,Network Congestion,2026-10-28 18:17:00,Cell-KA-014,Low,Open
+E000080,C0042,Data Session Failure,2026-10-18 07:55:00,Cell-KA-014,Low,Closed
+E000081,C0044,SIM Registration Failure,2026-09-08 02:43:00,Cell-WB-011,Low,Closed
+E000082,C0047,Data Session Failure,2026-10-02 18:55:00,Cell-DL-008,Low,Closed
+E000083,C0047,Network Congestion,2026-10-03 08:25:00,Cell-WB-011,Low,Closed
+E000084,C0047,Call Drop,2026-09-28 15:34:00,Cell-WB-011,Low,Closed
+E000085,C0048,SIM Registration Failure,2026-09-08 22:33:00,Cell-MH-022,Medium,Open
+E000086,C0048,Call Drop,2026-09-14 12:37:00,Cell-MH-022,Low,Closed
+E000087,C0048,Network Congestion,2026-09-12 17:16:00,Cell-MH-022,Low,Closed
+E000088,C0048,SIM Registration Failure,2026-09-24 05:31:00,Cell-KA-014,Low,Closed
+E000089,C0049,Coverage Degradation,2026-09-18 14:11:00,Cell-KA-014,High,Closed
+E000090,C0049,Data Session Failure,2026-10-23 03:46:00,Cell-KA-014,Medium,Closed
+E000091,C0049,Network Congestion,2026-09-13 04:51:00,Cell-DL-008,Medium,Open
+E000092,C0049,Coverage Degradation,2026-10-02 04:57:00,Cell-WB-011,Medium,Closed
+E000093,C0050,Network Congestion,2026-09-26 03:44:00,Cell-TN-001,Low,Closed
+E000094,C0052,Coverage Degradation,2026-09-17 11:23:00,Cell-WB-011,High,Closed
+E000095,C0052,Data Session Failure,2026-09-02 13:07:00,Cell-WB-011,Low,Closed
+E000096,C0052,Data Session Failure,2026-10-12 17:11:00,Cell-MH-022,Low,Closed
+E000097,C0053,Coverage Degradation,2026-10-27 02:24:00,Cell-MH-022,Low,Closed
+E000098,C0053,Data Session Failure,2026-10-26 05:40:00,Cell-DL-008,Medium,Closed
+E000099,C0053,Network Congestion,2026-10-25 02:05:00,Cell-MH-022,Low,Closed
+E000100,C0053,Coverage Degradation,2026-09-19 22:17:00,Cell-DL-008,Low,Closed
+E000101,C0055,Call Drop,2026-09-27 05:11:00,Cell-KA-014,Medium,Closed
+E000102,C0055,Call Drop,2026-10-31 23:44:00,Cell-KA-014,Low,Open
+E000103,C0055,Call Drop,2026-09-05 15:35:00,Cell-TN-001,Medium,Closed
+E000104,C0055,Coverage Degradation,2026-09-06 03:16:00,Cell-KA-014,Low,Closed
+E000105,C0056,SIM Registration Failure,2026-09-16 23:18:00,Cell-KA-014,Low,Closed
+E000106,C0056,Data Session Failure,2026-09-02 01:42:00,Cell-MH-022,High,Closed
+E000107,C0059,Network Congestion,2026-10-31 22:34:00,Cell-WB-011,Medium,Closed
+E000108,C0059,Coverage Degradation,2026-10-11 18:27:00,Cell-WB-011,Low,Closed
+E000109,C0060,SIM Registration Failure,2026-09-29 09:23:00,Cell-MH-022,Low,Open
+E000110,C0061,Coverage Degradation,2026-09-23 09:30:00,Cell-TN-001,Medium,Closed
+E000111,C0061,Call Drop,2026-10-19 15:19:00,Cell-DL-008,Medium,Closed
+E000112,C0063,SIM Registration Failure,2026-09-27 17:27:00,Cell-KA-014,Low,Closed
+E000113,C0063,Data Session Failure,2026-09-25 12:14:00,Cell-TN-001,Low,Closed
+E000114,C0064,Coverage Degradation,2026-09-19 20:47:00,Cell-MH-022,Low,Closed
+E000115,C0064,Call Drop,2026-09-12 04:18:00,Cell-DL-008,Medium,Closed
+E000116,C0064,Data Session Failure,2026-10-10 15:12:00,Cell-TN-001,Low,Closed
+E000117,C0065,SIM Registration Failure,2026-09-19 08:08:00,Cell-TN-001,Low,Open
+E000118,C0066,SIM Registration Failure,2026-09-27 09:50:00,Cell-MH-022,Low,Closed
+E000119,C0066,Network Congestion,2026-09-22 02:53:00,Cell-TN-001,Low,Closed
+E000120,C0066,Network Congestion,2026-10-05 15:11:00,Cell-MH-022,Medium,Closed
+E000121,C0067,Call Drop,2026-09-25 14:15:00,Cell-KA-014,Low,Closed
+E000122,C0067,SIM Registration Failure,2026-10-04 21:13:00,Cell-DL-008,Medium,Closed
+E000123,C0068,Call Drop,2026-10-18 17:33:00,Cell-MH-022,Low,Closed
+E000124,C0069,Call Drop,2026-10-26 21:13:00,Cell-KA-014,Medium,Closed
+E000125,C0070,Network Congestion,2026-10-08 03:25:00,Cell-TN-001,High,Closed
+E000126,C0070,Coverage Degradation,2026-10-15 15:44:00,Cell-KA-014,Low,Open
+E000127,C0070,Coverage Degradation,2026-09-11 15:05:00,Cell-MH-022,High,Closed
+E000128,C0071,Coverage Degradation,2026-09-23 20:09:00,Cell-TN-001,Low,Closed
+E000129,C0074,SIM Registration Failure,2026-10-17 06:01:00,Cell-MH-022,Medium,Closed
+E000130,C0074,SIM Registration Failure,2026-09-03 15:45:00,Cell-WB-011,Low,Closed
+E000131,C0074,Coverage Degradation,2026-09-13 18:11:00,Cell-MH-022,Low,Closed
+E000132,C0074,Coverage Degradation,2026-10-26 19:58:00,Cell-KA-014,Low,Open
+E000133,C0075,Call Drop,2026-10-05 11:29:00,Cell-WB-011,Low,Open
+E000134,C0075,Data Session Failure,2026-09-02 19:54:00,Cell-WB-011,Low,Closed
+E000135,C0075,SIM Registration Failure,2026-10-13 17:52:00,Cell-KA-014,Medium,Closed
+E000136,C0076,Data Session Failure,2026-09-21 13:41:00,Cell-TN-001,Low,Closed
+E000137,C0076,Call Drop,2026-09-03 04:11:00,Cell-KA-014,Low,Open
+E000138,C0076,SIM Registration Failure,2026-09-03 18:41:00,Cell-DL-008,Medium,Closed
+E000139,C0077,Call Drop,2026-09-15 19:45:00,Cell-TN-001,High,Closed
+E000140,C0077,Call Drop,2026-10-02 02:29:00,Cell-MH-022,Medium,Closed
+E000141,C0077,Call Drop,2026-09-27 11:50:00,Cell-WB-011,Low,Open
+E000142,C0078,Call Drop,2026-09-05 06:33:00,Cell-TN-001,Medium,Closed
+E000143,C0078,Network Congestion,2026-09-13 06:33:00,Cell-WB-011,Medium,Open
+E000144,C0078,Call Drop,2026-10-18 17:26:00,Cell-WB-011,Low,Closed
+E000145,C0079,SIM Registration Failure,2026-09-11 05:35:00,Cell-WB-011,Low,Open
+E000146,C0081,Data Session Failure,2026-10-28 10:35:00,Cell-MH-022,Low,Closed
+E000147,C0081,Coverage Degradation,2026-10-23 23:20:00,Cell-KA-014,Medium,Closed
+E000148,C0081,Data Session Failure,2026-10-20 17:59:00,Cell-MH-022,High,Closed
+E000149,C0082,Coverage Degradation,2026-09-19 19:01:00,Cell-KA-014,High,Closed
+E000150,C0083,Data Session Failure,2026-09-14 10:01:00,Cell-WB-011,Medium,Closed
+E000151,C0083,Call Drop,2026-10-07 04:06:00,Cell-DL-008,Low,Open
+E000152,C0084,Data Session Failure,2026-09-15 08:51:00,Cell-TN-001,Medium,Closed
+E000153,C0084,Data Session Failure,2026-09-14 23:04:00,Cell-DL-008,Low,Closed
+E000154,C0085,Call Drop,2026-10-09 20:19:00,Cell-WB-011,Low,Closed
+E000155,C0087,Network Congestion,2026-09-27 03:55:00,Cell-WB-011,High,Closed
+E000156,C0087,Data Session Failure,2026-10-11 12:03:00,Cell-WB-011,Low,Closed
+E000157,C0087,Network Congestion,2026-09-10 10:32:00,Cell-KA-014,Low,Closed
+E000158,C0087,Coverage Degradation,2026-09-26 14:48:00,Cell-WB-011,Medium,Closed
+E000159,C0088,Call Drop,2026-09-10 04:21:00,Cell-DL-008,Medium,Open
+E000160,C0088,SIM Registration Failure,2026-09-26 08:05:00,Cell-WB-011,Low,Closed
+E000161,C0088,Coverage Degradation,2026-10-19 04:30:00,Cell-KA-014,Low,Closed
+E000162,C0088,Coverage Degradation,2026-09-13 17:39:00,Cell-KA-014,Low,Closed
+E000163,C0089,SIM Registration Failure,2026-09-08 21:26:00,Cell-MH-022,Low,Closed
+E000164,C0090,Data Session Failure,2026-10-20 09:10:00,Cell-WB-011,Medium,Closed
+E000165,C0091,Data Session Failure,2026-09-03 07:12:00,Cell-KA-014,Medium,Closed
+E000166,C0091,Network Congestion,2026-09-08 23:03:00,Cell-WB-011,High,Closed
+E000167,C0091,Data Session Failure,2026-10-23 09:00:00,Cell-TN-001,Low,Closed
+E000168,C0091,Coverage Degradation,2026-09-22 06:47:00,Cell-KA-014,Low,Closed
+E000169,C0092,Call Drop,2026-10-10 23:09:00,Cell-DL-008,Medium,Closed
+E000170,C0092,Call Drop,2026-09-03 08:10:00,Cell-MH-022,Low,Closed
+E000171,C0092,Call Drop,2026-09-18 01:29:00,Cell-TN-001,Low,Closed
+E000172,C0092,Call Drop,2026-10-25 21:23:00,Cell-TN-001,Low,Closed
+E000173,C0093,Data Session Failure,2026-10-03 22:06:00,Cell-DL-008,High,Closed
+E000174,C0093,SIM Registration Failure,2026-09-12 06:32:00,Cell-WB-011,High,Open
+E000175,C0093,Data Session Failure,2026-09-16 16:19:00,Cell-DL-008,Low,Open
+E000176,C0093,Data Session Failure,2026-09-23 21:22:00,Cell-MH-022,Low,Closed
+E000177,C0094,SIM Registration Failure,2026-10-11 08:56:00,Cell-TN-001,High,Closed
+E000178,C0095,Network Congestion,2026-10-28 12:42:00,Cell-TN-001,Medium,Closed
+E000179,C0095,Network Congestion,2026-10-14 19:55:00,Cell-DL-008,Low,Open
+E000180,C0095,SIM Registration Failure,2026-09-20 19:21:00,Cell-WB-011,Low,Closed
+E000181,C0096,Coverage Degradation,2026-10-26 04:19:00,Cell-KA-014,Low,Closed
+E000182,C0096,Coverage Degradation,2026-10-20 04:41:00,Cell-KA-014,Low,Closed
+E000183,C0098,Call Drop,2026-10-24 04:46:00,Cell-MH-022,High,Closed
+E000184,C0098,Data Session Failure,2026-09-27 09:28:00,Cell-KA-014,Medium,Open
+E000185,C0098,Coverage Degradation,2026-09-12 00:48:00,Cell-WB-011,Low,Closed
+E000186,C0099,Data Session Failure,2026-09-15 21:01:00,Cell-TN-001,Medium,Closed
+E000187,C0099,Data Session Failure,2026-10-03 19:30:00,Cell-KA-014,High,Closed
+E000188,C0100,Call Drop,2026-09-15 01:26:00,Cell-MH-022,High,Closed
+E000189,C0100,Network Congestion,2026-10-13 06:48:00,Cell-TN-001,Low,Closed
