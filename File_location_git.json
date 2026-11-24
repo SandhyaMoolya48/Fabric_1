@@ -1,0 +1,32 @@
+[
+    {
+        "p_rel_url" : "SandhyaMoolya48/Fabric_1/refs/heads/main/billing.csv",
+        "p_sink_folder" : "Billing",
+        "p_sink_file" : "billing.csv"
+    },
+    {
+        "p_rel_url" : "SandhyaMoolya48/Fabric_1/refs/heads/main/customers.csv",
+        "p_sink_folder" : "Customers",
+        "p_sink_file" : "customers.csv"
+    },
+    {
+        "p_rel_url" : "SandhyaMoolya48/Fabric_1/refs/heads/main/network_events.csv",
+        "p_sink_folder" : "Network_Events"
+        "p_sink_file" : "network_events.csv"
+    },
+    {
+        "p_rel_url" : "Fabric_1/refs/heads/main/payments.csv",
+        "p_sink_folder" : "Payments",
+        "p_sink_file" : "payments.csv"
+    },
+    {
+        "p_rel_url" : "SandhyaMoolya48/Fabric_1/refs/heads/main/subscriptions.csv",
+        "p_sink_folder" : "Subscriptions",
+        "p_sink_file" : "subscriptions.csv"
+    },
+    {
+        "p_rel_url" : "SandhyaMoolya48/Fabric_1/refs/heads/main/usage.csv",
+        "p_sink_folder" : "Usage",
+        "p_sink_file" : "usage.csv"
+    }
+]
