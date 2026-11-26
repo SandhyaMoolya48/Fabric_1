@@ -1,0 +1,129 @@
+table gold_usage_billing_reconciliation
+	lineageTag: 6b1085f5-e4d3-4e41-ae83-79ab0c902016
+	sourceLineageTag: [dbo].[gold_usage_billing_reconciliation]
+
+	column customer_id
+		dataType: string
+		lineageTag: 4da08497-7849-498d-b853-92b9975a64e6
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_period
+		dataType: string
+		lineageTag: 7862cb92-478d-4a3d-80d9-1b3973cf7444
+		sourceLineageTag: billing_period
+		summarizeBy: none
+		sourceColumn: billing_period
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_usage_amount
+		dataType: double
+		lineageTag: a090905c-776f-4e58-a9fd-d6d66fa7c49d
+		sourceLineageTag: total_usage_amount
+		summarizeBy: sum
+		sourceColumn: total_usage_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_billed_amount
+		dataType: double
+		lineageTag: 3498f2c0-2eea-49d0-b825-03ddcabf33bb
+		sourceLineageTag: total_billed_amount
+		summarizeBy: sum
+		sourceColumn: total_billed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column usage_record_count
+		dataType: int64
+		formatString: 0
+		lineageTag: e118fe05-b9a9-426e-be5c-9ca7f493c891
+		sourceLineageTag: usage_record_count
+		summarizeBy: sum
+		sourceColumn: usage_record_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_record_count
+		dataType: int64
+		formatString: 0
+		lineageTag: ae73cb40-c524-4fe5-ab2c-2e1f01e75314
+		sourceLineageTag: billing_record_count
+		summarizeBy: sum
+		sourceColumn: billing_record_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column reconciliation_status
+		dataType: string
+		lineageTag: 95b8026f-13a1-47f1-a478-81dfdcca5ca9
+		sourceLineageTag: reconciliation_status
+		summarizeBy: none
+		sourceColumn: reconciliation_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_difference
+		dataType: double
+		lineageTag: 251a9e25-73a3-42dc-a622-1ccb91a2dcb3
+		sourceLineageTag: amount_difference
+		summarizeBy: sum
+		sourceColumn: amount_difference
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_comparison_status
+		dataType: string
+		lineageTag: c0055f49-e861-4094-9a4b-d01b9b341f5b
+		sourceLineageTag: amount_comparison_status
+		summarizeBy: none
+		sourceColumn: amount_comparison_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column _exec_seq
+		dataType: int64
+		formatString: 0
+		lineageTag: 207cd87f-7b8b-4c49-997f-5ad41c84ca8b
+		sourceLineageTag: _exec_seq
+		summarizeBy: sum
+		sourceColumn: _exec_seq
+
+		annotation SummarizationSetBy = Automatic
+
+	column _run_id
+		dataType: string
+		lineageTag: c0c5070b-5708-476b-929a-4acd72f977a0
+		sourceLineageTag: _run_id
+		summarizeBy: none
+		sourceColumn: _run_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column _processing_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 5a4ded53-3225-4921-be27-c6e4b0494f9a
+		sourceLineageTag: _processing_timestamp
+		summarizeBy: none
+		sourceColumn: _processing_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_usage_billing_reconciliation = entity
+		mode: directLake
+		source
+			entityName: gold_usage_billing_reconciliation
+			schemaName: dbo
+			expressionSource: 'DirectLake - Final_lakehouse'
+

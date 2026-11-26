@@ -1,0 +1,529 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "e05e0058-58ca-a156-4249-da214428aa29",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": {
+                "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+                "type": "Expression"
+              },
+              "type": "int"
+            },
+            "run_id": {
+              "value": {
+                "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze_Ingestion",
+        "dependsOn": [
+          {
+            "activity": "Pipeline_Orchetstion",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "f8680a78-e00d-a698-407b-0231033c80da",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": {
+                "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+                "type": "Expression"
+              },
+              "type": "int"
+            },
+            "run_id": {
+              "value": {
+                "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver_Data_Quality",
+        "dependsOn": [
+          {
+            "activity": "Bronze_Ingestion",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "b6a3992a-ff3f-94ef-4c2a-97fb417b4ca9",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Pipeline_Orchetstion",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "9d42aca4-0563-87df-41a0-f0a2cd52bf17",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": {
+                "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+                "type": "Expression"
+              },
+              "type": "int"
+            },
+            "run_id": {
+              "value": {
+                "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold_Reconcilation",
+        "dependsOn": [
+          {
+            "activity": "Silver_Data_Quality",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "9c79d509-1d38-b948-48df-09f181dd49c5",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": {
+                "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+                "type": "Expression"
+              },
+              "type": "int"
+            },
+            "run_id": {
+              "value": {
+                "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "KRI_NON_KRI_Classification",
+        "dependsOn": [
+          {
+            "activity": "Gold_Reconcilation",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "950f9589-ca0a-b3ce-44f6-d6d204b523ec",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": {
+                "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+                "type": "Expression"
+              },
+              "type": "int"
+            },
+            "run_id": {
+              "value": {
+                "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Audit Summary",
+        "dependsOn": [
+          {
+            "activity": "KRI_NON_KRI_Classification",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "b2a8bcf0-f568-aeda-48a4-799321834184",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": {
+                "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+                "type": "Expression"
+              },
+              "type": "int"
+            },
+            "run_id": {
+              "value": {
+                "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Excution_History",
+        "dependsOn": [
+          {
+            "activity": "Audit Summary",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "85a5aa4e-ef17-a4a1-4dc3-1aaf6a011886",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+              "type": "int"
+            },
+            "run_id": {
+              "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+              "type": "string"
+            },
+            "error_message": {
+              "value": "@string(activity('Bronze_Ingestion').error.message)",
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Bronze_Failure_Handler",
+        "dependsOn": [
+          {
+            "activity": "Bronze_Ingestion",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "85a5aa4e-ef17-a4a1-4dc3-1aaf6a011886",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+              "type": "int"
+            },
+            "run_id": {
+              "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+              "type": "string"
+            },
+            "error_message": {
+              "value": "@string(activity('Silver_Data_Quality').error.message)",
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Silver_Failure_Handler",
+        "dependsOn": [
+          {
+            "activity": "Silver_Data_Quality",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "85a5aa4e-ef17-a4a1-4dc3-1aaf6a011886",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+              "type": "int"
+            },
+            "run_id": {
+              "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+              "type": "string"
+            },
+            "error_message": {
+              "value": {
+                "value": "@string(activity('Gold_Reconcilation').error.message)",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Gold_Failure_Handler",
+        "dependsOn": [
+          {
+            "activity": "Gold_Reconcilation",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "85a5aa4e-ef17-a4a1-4dc3-1aaf6a011886",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+              "type": "int"
+            },
+            "run_id": {
+              "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+              "type": "string"
+            },
+            "error_message": {
+              "value": {
+                "value": "@string(activity('KRI_NON_KRI_Classification').error.message)",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "KRI_Failure_Handler",
+        "dependsOn": [
+          {
+            "activity": "KRI_NON_KRI_Classification",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "85a5aa4e-ef17-a4a1-4dc3-1aaf6a011886",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+              "type": "int"
+            },
+            "run_id": {
+              "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+              "type": "string"
+            },
+            "error_message": {
+              "value": {
+                "value": "@string(activity('Audit Summary').error.message)",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Audit_Failure_Handler",
+        "dependsOn": [
+          {
+            "activity": "Audit Summary",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "85a5aa4e-ef17-a4a1-4dc3-1aaf6a011886",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "exec_seq": {
+              "value": "@int(json(activity('Pipeline_Orchetstion').output.result.exitValue).exec_seq)",
+              "type": "int"
+            },
+            "run_id": {
+              "value": "@json(activity('Pipeline_Orchetstion').output.result.exitValue).run_id",
+              "type": "string"
+            },
+            "error_message": {
+              "value": {
+                "value": "@string(activity('Excution_History').error.message)",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "f7391051-bc15-4f95-a997-d6fcbfe16d61"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "History_Failure_Handler",
+        "dependsOn": [
+          {
+            "activity": "Excution_History",
+            "dependencyConditions": [
+              "Failed"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

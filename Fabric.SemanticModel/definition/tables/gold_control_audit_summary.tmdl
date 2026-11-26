@@ -1,0 +1,76 @@
+table gold_control_audit_summary
+	lineageTag: 8e435f3a-56b5-4b4f-8df6-1f1288145301
+	sourceLineageTag: [dbo].[gold_control_audit_summary]
+
+	column audit_stage
+		dataType: string
+		lineageTag: 0e856cfa-b561-47e8-be6a-2ea5a196a100
+		sourceLineageTag: audit_stage
+		summarizeBy: none
+		sourceColumn: audit_stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_table
+		dataType: string
+		lineageTag: 38f9c4c0-64e1-46df-984b-f9d8f18d0886
+		sourceLineageTag: source_table
+		summarizeBy: none
+		sourceColumn: source_table
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric_name
+		dataType: string
+		lineageTag: 06699211-1de9-4f6c-927d-362c2deaa8e5
+		sourceLineageTag: metric_name
+		summarizeBy: none
+		sourceColumn: metric_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column metric_value
+		dataType: string
+		lineageTag: c4131419-576b-4439-839d-9b4addde462e
+		sourceLineageTag: metric_value
+		summarizeBy: none
+		sourceColumn: metric_value
+
+		annotation SummarizationSetBy = Automatic
+
+	column exec_seq
+		dataType: int64
+		formatString: 0
+		lineageTag: 09e9d235-66a3-4b43-8a4e-4881b4633115
+		sourceLineageTag: exec_seq
+		summarizeBy: sum
+		sourceColumn: exec_seq
+
+		annotation SummarizationSetBy = Automatic
+
+	column run_id
+		dataType: string
+		lineageTag: f36a40ac-5aa2-4c79-b206-3e399d7bd833
+		sourceLineageTag: run_id
+		summarizeBy: none
+		sourceColumn: run_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column audit_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cd36322a-11bc-4114-9064-b73208e4c607
+		sourceLineageTag: audit_timestamp
+		summarizeBy: none
+		sourceColumn: audit_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_control_audit_summary = entity
+		mode: directLake
+		source
+			entityName: gold_control_audit_summary
+			schemaName: dbo
+			expressionSource: 'DirectLake - Final_lakehouse'
+

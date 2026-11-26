@@ -1,0 +1,175 @@
+table gold_kri_records
+	lineageTag: b4db4a4f-1749-4131-9a3e-88f01407cc6f
+	sourceLineageTag: [dbo].[gold_kri_records]
+
+	column customer_id
+		dataType: string
+		lineageTag: 4320ab0c-0054-4ddd-b861-e2b4fac300c6
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_period
+		dataType: string
+		lineageTag: aae75f5a-77d4-49fa-91b8-57648427481f
+		sourceLineageTag: billing_period
+		summarizeBy: none
+		sourceColumn: billing_period
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_usage_amount
+		dataType: double
+		lineageTag: 8581f342-1802-4839-a255-822d935241fe
+		sourceLineageTag: total_usage_amount
+		summarizeBy: sum
+		sourceColumn: total_usage_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_billed_amount
+		dataType: double
+		lineageTag: 26370331-ba6c-4675-a9b6-a736f995175d
+		sourceLineageTag: total_billed_amount
+		summarizeBy: sum
+		sourceColumn: total_billed_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column usage_record_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 6d496f4f-8966-4b98-9330-b954bfcf5c98
+		sourceLineageTag: usage_record_count
+		summarizeBy: sum
+		sourceColumn: usage_record_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column billing_record_count
+		dataType: int64
+		formatString: 0
+		lineageTag: e2d6850a-c31d-4c36-b65d-bf443bf16a2d
+		sourceLineageTag: billing_record_count
+		summarizeBy: sum
+		sourceColumn: billing_record_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column reconciliation_status
+		dataType: string
+		lineageTag: c3c78612-bb32-425e-b325-0f0fe62aeba0
+		sourceLineageTag: reconciliation_status
+		summarizeBy: none
+		sourceColumn: reconciliation_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_difference
+		dataType: double
+		lineageTag: ce5a4edc-3534-4cc6-b5a4-9b6b904e3253
+		sourceLineageTag: amount_difference
+		summarizeBy: sum
+		sourceColumn: amount_difference
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column amount_comparison_status
+		dataType: string
+		lineageTag: fd7f97c3-b6ae-4705-9488-a46546cd2f97
+		sourceLineageTag: amount_comparison_status
+		summarizeBy: none
+		sourceColumn: amount_comparison_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column _exec_seq
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b2a0424-892f-416a-9198-8a37bd1263e4
+		sourceLineageTag: _exec_seq
+		summarizeBy: sum
+		sourceColumn: _exec_seq
+
+		annotation SummarizationSetBy = Automatic
+
+	column _run_id
+		dataType: string
+		lineageTag: 9c4b85ba-e77d-4e04-8672-1e43ec2b7632
+		sourceLineageTag: _run_id
+		summarizeBy: none
+		sourceColumn: _run_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column _processing_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: df6af01c-0d63-450d-be71-acfba3f746a1
+		sourceLineageTag: _processing_timestamp
+		summarizeBy: none
+		sourceColumn: _processing_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column kri_id
+		dataType: string
+		lineageTag: b4f30ff3-e8c6-4feb-89e1-bb7519e766c6
+		sourceLineageTag: kri_id
+		summarizeBy: none
+		sourceColumn: kri_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column kri_description
+		dataType: string
+		lineageTag: 11897640-2a1b-406f-8364-c4665fb36017
+		sourceLineageTag: kri_description
+		summarizeBy: none
+		sourceColumn: kri_description
+
+		annotation SummarizationSetBy = Automatic
+
+	column classification
+		dataType: string
+		lineageTag: 6610e8eb-f122-44f0-9ff1-155494ef977a
+		sourceLineageTag: classification
+		summarizeBy: none
+		sourceColumn: classification
+
+		annotation SummarizationSetBy = Automatic
+
+	column classification_reason
+		dataType: string
+		lineageTag: 9bef528e-e07d-4989-95a7-b4ff0ebeba83
+		sourceLineageTag: classification_reason
+		summarizeBy: none
+		sourceColumn: classification_reason
+
+		annotation SummarizationSetBy = Automatic
+
+	column classification_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d0104a8d-0f33-41ca-8068-92fe7e89f6c6
+		sourceLineageTag: classification_timestamp
+		summarizeBy: none
+		sourceColumn: classification_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	partition gold_kri_records = entity
+		mode: directLake
+		source
+			entityName: gold_kri_records
+			schemaName: dbo
+			expressionSource: 'DirectLake - Final_lakehouse'
+

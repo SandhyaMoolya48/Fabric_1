@@ -1,0 +1,68 @@
+table control_execution_log
+	lineageTag: 48090876-7f50-454b-8199-f026e1f784da
+	sourceLineageTag: [dbo].[control_execution_log]
+
+	column exec_seq
+		dataType: int64
+		formatString: 0
+		lineageTag: d72517c8-67d8-4531-bbd0-7d9b7757145b
+		sourceLineageTag: exec_seq
+		summarizeBy: sum
+		sourceColumn: exec_seq
+
+		annotation SummarizationSetBy = Automatic
+
+	column run_id
+		dataType: string
+		lineageTag: 8baec8c8-ad33-4c40-9cf0-5424892d9638
+		sourceLineageTag: run_id
+		summarizeBy: none
+		sourceColumn: run_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column start_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 30a7432c-e6e3-4b04-9e0d-fc3da22afc07
+		sourceLineageTag: start_timestamp
+		summarizeBy: none
+		sourceColumn: start_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column end_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 81f7751a-cd6f-45ef-a872-ca18dd3aceb7
+		sourceLineageTag: end_timestamp
+		summarizeBy: none
+		sourceColumn: end_timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column execution_status
+		dataType: string
+		lineageTag: d701a785-989d-4b82-99a1-71a808ee5aa0
+		sourceLineageTag: execution_status
+		summarizeBy: none
+		sourceColumn: execution_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column error_message
+		dataType: string
+		lineageTag: 3a85409f-8b7b-43c2-b2a0-8afa7dfd5c47
+		sourceLineageTag: error_message
+		summarizeBy: none
+		sourceColumn: error_message
+
+		annotation SummarizationSetBy = Automatic
+
+	partition control_execution_log = entity
+		mode: directLake
+		source
+			entityName: control_execution_log
+			schemaName: dbo
+			expressionSource: 'DirectLake - Final_lakehouse'
+

@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["DirectLake - Final_lakehouse"]
+
+annotation PBI_ProTooling = ["DirectLakeOnOneLakeInWeb","WebModelingEdit"]
+
+ref table control_execution_log
+ref table control_execution_summary
+ref table gold_control_audit_summary
+ref table gold_kri_records
+ref table gold_non_kri_records
+ref table gold_usage_billing_reconciliation
+ref table Dashboard_Measures
+

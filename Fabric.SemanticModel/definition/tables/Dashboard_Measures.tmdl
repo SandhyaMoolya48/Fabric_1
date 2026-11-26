@@ -1,0 +1,223 @@
+table Dashboard_Measures
+	lineageTag: 9601a53e-a079-46a6-b27d-1bc3d5c486fa
+
+	measure 'Total Reconciliation Records' =
+			
+			COUNTROWS('gold_usage_billing_reconciliation')
+		formatString: 0
+		lineageTag: 07e89f2e-107b-4627-86ae-d8d4bd31a737
+
+	measure 'Total KRI' =
+			
+			COUNTROWS('gold_kri_records')
+		formatString: 0
+		lineageTag: e2d3d0eb-f268-44a3-b6b8-3dac77143e16
+
+	measure 'Total Non-KRI' =
+			
+			COUNTROWS('gold_non_kri_records')
+		formatString: 0
+		lineageTag: d752be4e-14fd-4047-a062-41c86b57c920
+
+	measure 'Usage Only Records' =
+			
+			CALCULATE(
+			    [Total Reconciliation Records],
+			    'gold_usage_billing_reconciliation'[reconciliation_status] = "YN"
+			)
+		formatString: 0
+		lineageTag: 62d1cae1-9470-45c2-8e3c-41e333549506
+
+	measure 'Billing Only Records' =
+			
+			CALCULATE(
+			    [Total Reconciliation Records],
+			    'gold_usage_billing_reconciliation'[reconciliation_status] = "NY"
+			)
+		formatString: 0
+		lineageTag: c381b0e6-0934-4f95-beba-ee7348df9e89
+
+	measure 'Matched Records' =
+			
+			CALCULATE(
+			    [Total Reconciliation Records],
+			    'gold_usage_billing_reconciliation'[reconciliation_status] = "YY"
+			)
+		formatString: 0
+		lineageTag: f772473a-5a14-4cc4-b8fe-586e157a7798
+
+	measure 'Total Usage Amount' =
+			
+			SUM('gold_usage_billing_reconciliation'[total_usage_amount])
+		lineageTag: 311f9299-d64b-472b-b255-aa7f23a1cca1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Billed Amount' =
+			
+			SUM('gold_usage_billing_reconciliation'[total_billed_amount])
+		lineageTag: b4fb6a0b-5248-4ddb-b492-6f281e161b69
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue Difference' =
+			
+			[Total Usage Amount] - [Total Billed Amount]
+		lineageTag: 1093583e-2848-4d2c-be7f-f2f35bd78918
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Amount Mismatch Records' =
+			
+			CALCULATE(
+			    [Total Reconciliation Records],
+			    'gold_usage_billing_reconciliation'[amount_comparison_status] = "AMOUNT_MISMATCH"
+			)
+		formatString: 0
+		lineageTag: f418d835-ae73-4e2a-a826-a86ae103f68c
+
+	measure 'Amount Match Records' =
+			
+			CALCULATE(
+			    [Total Reconciliation Records],
+			    'gold_usage_billing_reconciliation'[amount_comparison_status] = "AMOUNT_MATCH"
+			)
+		formatString: 0
+		lineageTag: 3b1c3e0f-cbf1-40dc-b773-bd89447d5b56
+
+	measure 'Total Source Records' =
+			
+			CALCULATE(
+			    SUMX(
+			        'gold_control_audit_summary',
+			        VALUE('gold_control_audit_summary'[metric_value])
+			    ),
+			    'gold_control_audit_summary'[metric_name] = "source_count"
+			)
+		lineageTag: 1cd36f0a-24c0-4691-9a94-caa152c67d71
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Rejected Records' =
+			
+			CALCULATE(
+			    SUMX(
+			        'gold_control_audit_summary',
+			        VALUE('gold_control_audit_summary'[metric_value])
+			    ),
+			    'gold_control_audit_summary'[metric_name] = "filter_count"
+			)
+		lineageTag: 8058a4e0-8dd0-40f3-a7f0-e33d16e56a6c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Duplicate Records' =
+			
+			CALCULATE(
+			    SUMX(
+			        'gold_control_audit_summary',
+			        VALUE('gold_control_audit_summary'[metric_value])
+			    ),
+			    'gold_control_audit_summary'[metric_name] = "duplicate_count"
+			)
+		lineageTag: 02395100-9348-4d29-8d29-7eda5bb5e4e5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Valid Records' =
+			
+			CALCULATE(
+			    SUMX(
+			        'gold_control_audit_summary',
+			        VALUE('gold_control_audit_summary'[metric_value])
+			    ),
+			    'gold_control_audit_summary'[metric_name] = "balance_count"
+			)
+		lineageTag: 04654935-6fc7-42e6-af2a-dcf11ec5b45a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Data Quality Percentage' =
+			
+			DIVIDE(
+			    [Total Valid Records],
+			    [Total Source Records],
+			    0
+			)
+		lineageTag: 61bbb066-fc34-4bdd-a67e-7627c8fe5902
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Pipeline Runs' =
+			
+			COUNTROWS('control_execution_log')
+		formatString: 0
+		lineageTag: 6f4b8eea-bcbf-4cb7-8fda-56373df5a9c6
+
+	measure 'Successful Pipeline Runs' =
+			
+			CALCULATE(
+			    COUNTROWS('control_execution_log'),
+			    'control_execution_log'[execution_status] = "SUCCESS"
+			)
+		formatString: 0
+		lineageTag: ce2a868d-f595-4ad3-9ed6-09f598055fbc
+
+	measure 'Failed Pipeline Runs' =
+			
+			CALCULATE(
+			    COUNTROWS('control_execution_log'),
+			    'control_execution_log'[execution_status] = "FAILED"
+			)
+		formatString: 0
+		lineageTag: 384321df-918e-4119-b3d9-6f8c8f25b2c4
+
+	measure 'Pipeline Success Rate' =
+			
+			DIVIDE(
+			    [Successful Pipeline Runs],
+			    [Total Pipeline Runs],
+			    0
+			)
+		lineageTag: a098dc12-be3d-4d2f-8a37-2abdf525b85e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Latest Execution Sequence' =
+			
+			MAX('control_execution_log'[exec_seq])
+		formatString: 0
+		lineageTag: f5ebbffb-9982-4ea2-98d4-ab23484ea207
+
+	measure 'KRI Percentage' =
+			
+			DIVIDE(
+			    [Total KRI],
+			    [Total Reconciliation Records],
+			    0
+			)
+		lineageTag: 94685c60-b9ea-486a-af61-da3db19add11
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Dummy
+		formatString: 0
+		lineageTag: d44c37d1-4d31-4c03-9717-7757d3ce39d8
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Dummy]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dashboard_Measures = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Dummy",
+				    INTEGER,
+				    {{1}}
+				)
+
+	annotation PBI_Id = 1dfa5c5fe1434c6f8756a3fb59aca33a
+
